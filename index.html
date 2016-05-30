@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="tax-calc">
+    <head>
+        <meta chaset="UTF-8">
+        <title> Calc </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script data-require="angular.js@1.4.9" data-semver="1.4.9" src="https://code.angularjs.org/1.4.9/angular.js"></script>
+        <script data-require="angular-route@1.4.2" data-semver="1.4.2" src="https://code.angularjs.org/1.4.2/angular-route.js"></script>
+        <script src="bootstarp/ui-bootstrap-tpls-1.3.3.min.js"></script>
+    </head>
+    
+    <body>        
+        <header>
+            <nav class="navbar">   
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#"><span class="jumbotron">TAB1</span></a></li>
+                    <li><a href="#"><h1>TAB2</h1></a></li>
+                </ul>    
+            </nav>
+        </header>
+        
+        <div ng-view></div>
+            
+        <footer>
+            <p></p>
+        </footer>
+    </body>   
+    
+</html>
