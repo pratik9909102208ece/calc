@@ -1,4 +1,4 @@
-var app = angular.module('tax-calc');
+var app = angular.module("tax",[]);
 
 /*app.config($routeProvider){
     
