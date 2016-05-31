@@ -48,31 +48,34 @@
                 </div>
             </form>    
             
+            <div class="row" style="min-height:50px;">
+            
+            </div>
             <div class="table-responsive col-sm-offset-3 col-sm-6">
-                <table class="table table-hover table-bordered" ng-init="brokerage=0">
+                <table class="table table-hover table-bordered" ng-init="turnover='NIL';brokerage:'NIL'">
                     <tr>
-                        <td>Turnover</td>
-                        <td ng-bind="turnover"></td>
+                        <td class="col-sm-6">Turnover</td>
+                        <td class="col-sm-6" ng-bind="turnover | number: 2"></td>
                     </tr>
                     <tr>
                         <td>Brokerage</td>
-                        <td>{{brokerage}}</td>
+                        <td ng-bind="brokerage | number: 2"></td>
                     </tr>
                     <tr>
                         <td>Service Tax</td>
-                        <td>{{serviceTax}}</td>
+                        <td ng-bind="serviceTax | number: 2 "></td>
                     </tr>
                     <tr>
                         <td>STT</td>
-                        <td>{{stt}}</td>
+                        <td ng-bind="stt | number: 2"></td>
                     </tr>
                     <tr>
                         <td>Stamp Duty</td>
-                        <td>{{stampDuty}}</td>
+                        <td ng-bind="stampDuty | number: 2"></td>
                     </tr>                    
                     <tr>
-                        <td>Stamp Duty</td>
-                        <td>{{regulatoryTax}}</td>
+                        <td>Regulatory Tax</td>
+                        <td ng-bind="regulatoryTax | number: 2"></td>
                     </tr>                    
                 </table>
             </div>

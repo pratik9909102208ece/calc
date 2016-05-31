@@ -20,6 +20,8 @@ app.controller('mainController',['$scope',function($scope){
         $scope.regulatoryTax = convertPercenttoNumber(0.004)*$scope.turnover;    
     });
     
+    $scope.turnover = 0;
+    
     
     
 }]);
