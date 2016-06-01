@@ -91,9 +91,21 @@
                         <td ng-bind="stampDuty | number: 2"></td>
                     </tr>                    
                     <tr>
-                        <td>Regulatory Tax</td>
-                        <td ng-bind="regulatoryTax | number: 2"></td>
+                        <td>Transaction Charges</td>
+                        <td ng-bind="transactionCharges | number: 2"></td>
                     </tr>                    
+                    <tr>
+                        <td>SEBI Charges</td>
+                        <td ng-bind="sebiCharges | number: 2"></td>
+                    </tr>                                        
+                    <tr ng-if="profit">
+                        <td>PROFIT</td>
+                        <td ng-bind="profitOrLoss | number: 2"></td>
+                    </tr>                                        
+                    <tr ng-if="!profit">
+                        <td>LOSS</td>
+                        <td ng-bind="profitOrLoss | number: 2"></td>
+                    </tr>                                        
                 </table>
             </div>
         </div>

@@ -3,6 +3,8 @@ app.controller('mainController',['$scope',function($scope){
     $scope.costPerShare;
     $scope.sellPerShare;
     $scope.brokeragePercentage;
+    $scope.sebiCharges;
+    $scope.profit = true;
     
     
     var convertPercenttoNumber = function (percent) {
@@ -10,13 +12,16 @@ app.controller('mainController',['$scope',function($scope){
     };  
     
     $scope.$watchGroup(['shares','costPerShare','sellPerShare','brokeragePercentage','exchangeRate'],function(){    
-        $scope.costPrice = $scope.shares*$scope.costPerShare;
-        $scope.sellingPrice = $scope.shares*$scope.sellPerShare;        
+        $scope.costPrice = $scope.shares * $scope.costPerShare;
+        $scope.sellingPrice = $scope.shares * $scope.sellPerShare;        
         $scope.turnover = $scope.costPrice + $scope.sellingPrice;    
-        $scope.brokerage = convertPercenttoNumber($scope.brokeragePercentage)*$scope.turnover;
-        $scope.serviceTax = 2 * convertPercenttoNumber(12.36)*$scope.brokerage;
-        $scope.stt = convertPercenttoNumber(0.0025)*$scope.sellingPrice;
-        $scope.stampDuty = convertPercenttoNumber(0.002)*$scope.turnover;
-        $scope.regulatoryTax = convertPercenttoNumber($scope.exchangeRate)*$scope.turnover;    
+        $scope.brokerage = convertPercenttoNumber($scope.brokeragePercentage) * $scope.costPrice +                                                      convertPercenttoNumber($scope.brokeragePercentage) * $scope.sellingPrice;
+        $scope.serviceTax = convertPercenttoNumber(15) * $scope.brokerage;
+        $scope.stt = convertPercenttoNumber(0.025) * $scope.sellingPrice;
+        $scope.stampDuty = convertPercenttoNumber(0.002) * $scope.turnover;
+        $scope.transactionCharges = convertPercenttoNumber($scope.exchangeRate)*$scope.turnover;    
+        $scope.profitOrLoss = $scope.sellingPrice - ($scope.costPrice + $scope.brokerage + $scope.serviceTax + $scope.stt + $scope.stampDuty + $scope.transactionCharges);        
+        $scope.sebiCharges = 1.68 + ( $scope.turnover - $scope.turnover);
+        $scope.profit = $scope.profitOrLoss > 0 ? true : false;             
     });
 }]);
