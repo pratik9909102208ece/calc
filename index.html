@@ -46,33 +46,53 @@
                         <input type="number" class="form-control" id="sellingPrice" ng-model="sellPerShare" placeholder="Selling Price Per Share">
                     </fieldset>                    
                 </div>
+                
+                <div class="row" style="min-height:15px;">
+            </div>
+                
+                <div class="row" ng-init="exchangeRate=0.00325">
+                    <label class="radio-inline col-sm-1 col-sm-offset-4">
+                        <input type="radio" name="exchange" ng-model="exchangeRate" value=0.00325>NSE    
+                    </label>
+                    <label class="radio-inline col-sm-2" style="text-align:center">
+                        <input type="radio" name="exchange" ng-model="exchangeRate" value=0.00275>BSE    
+                    </label>
+                    <label class="radio-inline col-sm-2">
+                        <input type="radio" name="exchange" ng-model="exchangeRate" value=0.002>MCX-SX    
+                    </label>
+                </div>                
             </form>    
             
+            
+            <div class="row" style="min-height:50px;">
+            </div>
+            
+            
             <div class="table-responsive col-sm-offset-3 col-sm-6">
-                <table class="table table-hover table-bordered" ng-init="brokerage=0">
+                <table class="table table-hover table-bordered">
                     <tr>
-                        <td>Turnover</td>
-                        <td ng-bind="turnover"></td>
+                        <td class="col-sm-6">Turnover</td>
+                        <td class="col-sm-6" ng-bind="turnover | number: 2"></td>
                     </tr>
                     <tr>
                         <td>Brokerage</td>
-                        <td>{{brokerage}}</td>
+                        <td ng-bind="brokerage | number: 2"></td>
                     </tr>
                     <tr>
                         <td>Service Tax</td>
-                        <td>{{serviceTax}}</td>
+                        <td ng-bind="serviceTax | number: 2 "></td>
                     </tr>
                     <tr>
                         <td>STT</td>
-                        <td>{{stt}}</td>
+                        <td ng-bind="stt | number: 2"></td>
                     </tr>
                     <tr>
                         <td>Stamp Duty</td>
-                        <td>{{stampDuty}}</td>
+                        <td ng-bind="stampDuty | number: 2"></td>
                     </tr>                    
                     <tr>
-                        <td>Stamp Duty</td>
-                        <td>{{regulatoryTax}}</td>
+                        <td>Regulatory Tax</td>
+                        <td ng-bind="regulatoryTax | number: 2"></td>
                     </tr>                    
                 </table>
             </div>

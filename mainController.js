@@ -9,7 +9,7 @@ app.controller('mainController',['$scope',function($scope){
         return percent * 0.01;
     };  
     
-    $scope.$watchGroup(['shares','costPerShare','sellPerShare','brokeragePercentage'],function(){    
+    $scope.$watchGroup(['shares','costPerShare','sellPerShare','brokeragePercentage','exchangeRate'],function(){    
         $scope.costPrice = $scope.shares*$scope.costPerShare;
         $scope.sellingPrice = $scope.shares*$scope.sellPerShare;        
         $scope.turnover = $scope.costPrice + $scope.sellingPrice;    
@@ -17,9 +17,6 @@ app.controller('mainController',['$scope',function($scope){
         $scope.serviceTax = 2 * convertPercenttoNumber(12.36)*$scope.brokerage;
         $scope.stt = convertPercenttoNumber(0.0025)*$scope.sellingPrice;
         $scope.stampDuty = convertPercenttoNumber(0.002)*$scope.turnover;
-        $scope.regulatoryTax = convertPercenttoNumber(0.004)*$scope.turnover;    
+        $scope.regulatoryTax = convertPercenttoNumber($scope.exchangeRate)*$scope.turnover;    
     });
-    
-    
-    
 }]);
