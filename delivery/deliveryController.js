@@ -1,4 +1,4 @@
-app.controller('intradayController', ['$scope', function ($scope) {
+app.controller('deliveryController', ['$scope', function ($scope) {
     $scope.shares;
     $scope.costPerShare;
     $scope.sellPerShare;

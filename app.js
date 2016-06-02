@@ -2,15 +2,20 @@ var app = angular.module('tax',['ui.router']);
 
 app.config(function($stateProvider,$urlRouterProvider){
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/intra');
     
     $stateProvider
     
-    .state('home',{
-        url: '/home',
+    .state('intra',{
+        url: '/intra',
         templateUrl: '/intraday/intraday.html',
-        controller: 'intradayController',
-        controllerAs: 'intraCtrl'        
+        controller: 'intradayController'        
+    })
+    
+    .state('delivery',{
+        url: '/delivery',
+        templateUrl: '/delivery/delivery.html',
+        controller: 'deliveryController'        
     });
     
 
