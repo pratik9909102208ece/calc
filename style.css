@@ -1,17 +1,24 @@
-* {
-  /*background-color: #C1E1A6;  */
-  /*color: #fff;*/
+body {
+    background-color: #a7b3a5;
+    color: #fff;
 }
-
 .nav > li {
-    text-align: center;   
+    text-align: center;
 }
 
 table tr td {
-    text-align: center;    
-    
+    text-align: center;
 }
 
-table tr :first-child {
+table {
+    color: #000;
+    background-color: #f8f8f8;
+}
+
+table tr:last-child {
     font-weight: bold;
+}
+
+.radio-style {
+    font-weight: 600;
 }

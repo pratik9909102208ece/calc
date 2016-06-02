@@ -27,13 +27,13 @@
     </div>
 
     <div class="row" ng-init="exchangeRate=0.00325">
-        <label class="radio-inline col-sm-1 col-sm-offset-4">
+        <label class="radio-style radio-inline col-sm-1 col-sm-offset-4">
             <input type="radio" name="exchange" ng-model="exchangeRate" value=0.00325>NSE
         </label>
-        <label class="radio-inline col-sm-2" style="text-align:center">
+        <label class="radio-style radio-inline col-sm-2" style="text-align:center">
             <input type="radio" name="exchange" ng-model="exchangeRate" value=0.00275>BSE
         </label>
-        <label class="radio-inline col-sm-2">
+        <label class="radio-style radio-inline col-sm-2">
             <input type="radio" name="exchange" ng-model="exchangeRate" value=0.002>MCX-SX
         </label>
     </div>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td>Brokerage</td>
-            <td ng-bind="brokerage | number: 2"></td>
+            <td ng-bind="brokerage | number: 2" placeholder=></td>
         </tr>
         <tr>
             <td>Service Tax</td>
@@ -74,13 +74,15 @@
             <td>SEBI Charges</td>
             <td ng-bind="sebiCharges | number: 2"></td>
         </tr>
-        <tr ng-if="profit">
+        <tr ng-if="profit" class="alert-success">
             <td>PROFIT</td>
             <td ng-bind="profitOrLoss | number: 2"></td>
         </tr>
-        <tr ng-if="!profit">
+        <tr ng-if="!profit" class="alert-danger">
             <td>LOSS</td>
             <td ng-bind="profitOrLoss | number: 2"></td>
         </tr>
     </table>
 </div>
+
+
