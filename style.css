@@ -12,7 +12,7 @@ table tr td {
 
 table {
     color: #000;
-    background-color: #f8f8f8;
+    background-color: #eee;
 }
 
 table tr:last-child {
@@ -22,3 +22,28 @@ table tr:last-child {
 .radio-style {
     font-weight: 600;
 }
+
+.nav li a h1 {
+    color: black;
+}
+
+.nav>li.selected>a{
+    background-color: beige;
+}
+
+.nav-tabs>li { 
+ margin-bottom: 0;
+} 
+
+.nav-tabs>li>a:hover {
+    border-color: transparent;
+}
+
+/*.btn-group {    
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dp-down {
+    width: 100% !important;
+}*/

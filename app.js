@@ -1,11 +1,11 @@
-var app = angular.module('tax',['ui.router']);
+var app = angular.module('tax',['ui.router','ui.bootstrap']);
 
 app.config(function($stateProvider,$urlRouterProvider){
     
     $urlRouterProvider.otherwise('/home');
     
     $stateProvider.state('home',{
-        url: '/intra',
+        url: '/home',
         templateUrl: '/intraday/intraday.html',
         controller: 'intradayController'        
     });

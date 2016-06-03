@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar">
         <ul class="nav nav-tabs">
-            <li class="col-sm-6"><a ng-click="setIntraday()"><h1>INTRA-DAY</h1></a></li>
-            <li class="col-sm-6"><a ng-click="setDelivery()"><h1>DELIVERY</h1></a></li>
+            <li class="col-sm-6" ng-class="{'selected' : intra}"><a ng-click="setIntraday()"><h1>INTRA-DAY</h1></a></li>
+            <li class="col-sm-6" ng-class="{'selected' : !intra}"><a ng-click="setDelivery()"><h1>DELIVERY</h1></a></li>
         </ul>
     </nav>
 </header>
@@ -36,25 +36,35 @@
     </div>
 
     <div class="row" ng-init="exchangeRate=0.00325">
-        <label class="radio-style radio-inline col-sm-1 col-sm-offset-4">
+        <label class="radio-style radio-inline col-sm-1 col-sm-offset-3">
             <input type="radio" name="exchange" ng-model="exchangeRate" value=0.00325>NSE
         </label>
-        <label class="radio-style radio-inline col-sm-2" style="text-align:center">
+        <label class="radio-style radio-inline col-sm-1">
             <input type="radio" name="exchange" ng-model="exchangeRate" value=0.00275>BSE
         </label>
         <label class="radio-style radio-inline col-sm-2">
             <input type="radio" name="exchange" ng-model="exchangeRate" value=0.002>MCX-SX
         </label>
+
+        <div class="btn-group col-sm-1" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                Button dropdown <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li ng-repeat="(key,value) in states">
+                    <a href>{{key}}</a>
+                </li>
+            </ul>    
+        </div>
     </div>
 </form>
-
 
 <div class="row" style="min-height:50px;">
 </div>
 
 
-<div class="table-responsive col-sm-offset-3 col-sm-6">
-    <table class="table table-hover table-bordered">
+<div class="table-responsive col-xs-offset-3 col-xs-6">
+    <table class="table table-striped table-bordered">
         <tr>
             <td class="col-sm-6">Turnover</td>
             <td class="col-sm-6" ng-bind="turnover | number: 2"></td>

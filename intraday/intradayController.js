@@ -44,4 +44,10 @@ app.controller('intradayController', ['$scope', function ($scope) {
         $scope.profit = ($scope.profitOrLoss >= 0 || isNaN($scope.profitOrLoss)) ? true : false;
     });    
     
+    $scope.states = {
+        AndhraPradesh : 0.005,
+        Karnataka : 0.01,
+        Kerala : 0.002
+    }
+    
 }]);
