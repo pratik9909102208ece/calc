@@ -1,3 +1,12 @@
+<header>
+    <nav class="navbar">
+        <ul class="nav nav-tabs">
+            <li class="col-sm-6"><a ng-click="setIntraday()"><h1>INTRA-DAY</h1></a></li>
+            <li class="col-sm-6"><a ng-click="setDelivery()"><h1>DELIVERY</h1></a></li>
+        </ul>
+    </nav>
+</header>
+
 <form name="inputDetails">
     <div class="row">
         <fieldset class="col-sm-offset-3 col-sm-2 form-group">
@@ -74,7 +83,7 @@
             <td>SEBI Charges</td>
             <td ng-bind="sebiCharges | number: 2"></td>
         </tr>
-        <tr ng-if="profit" class="alert-success">
+        <tr ng-if="profit" ng-class="{'alert-success' : profit != NaN}">
             <td>PROFIT</td>
             <td ng-bind="profitOrLoss | number: 2"></td>
         </tr>
@@ -84,5 +93,3 @@
         </tr>
     </table>
 </div>
-
-
