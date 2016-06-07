@@ -99,7 +99,7 @@
         </tr>
         <tr ng-if="!profit" class="alert-danger">
             <td>LOSS</td>
-            <td ng-bind="profitOrLoss | number: 2"></td>
+            <td ng-bind="profitOrLoss | number: 2 | modFilter"></td>
         </tr>
     </table>
 </div>
